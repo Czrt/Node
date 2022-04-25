@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if(admin){%>
+    <h1>欢迎
+        <%= admin.username%>登录</h1>
+    <h1><a href="/regout">退出</a></h1>
+    <%}else{%>
+    <h1><a href="/reg">登录</a></h1>
+    <h1><a href="/login">注册</a></h1>
+    <%}%>
+    <h2>修该页面</h2>
+    <!-- 1通过url地址 -->
+    <!-- <form action="/users/update?_id=<%= user._id%>" method="post">
+    用户名<input type="text" name="username" value="<%= user.username%>"><br><br>
+    <input type="submit" value="提交">
+</form> -->
+    <!-- 2通过input隐藏域 -->
+    <form action="/users/update" method="post">
+        <input type="hidden" name="_id" value="<%= user._id%>">
+        用户名<input type="text" name="username" value="<%= user.username%>"><br><br>
+        <input type="submit" value="提交">
+    </form>
+    <p>
+        <%= user%>
+    </p>
+</body>
+
+</html>

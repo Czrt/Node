@@ -1,0 +1,13 @@
+ Agent: [Function: Agent] { defaultMaxSockets: Infinity },
+  ClientRequest: [Function: ClientRequest],
+  IncomingMessage: [Function: IncomingMessage],
+  OutgoingMessage: [Function: OutgoingMessage],
+  Server: [Function: Server],
+  ServerResponse: [Function: ServerResponse],
+  createServer: [Function: createServer],
+  validateHeaderName: [Function: __node_internal_],
+  validateHeaderValue: [Function: __node_internal_],
+  get: [Function: get],
+  request: [Function: request],
+  maxHeaderSize: [Getter],
+  globalAgent: [Getter/Setter]

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>添加<%= data.username %>的头像</h3>
+
+	<form action="/users/image" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="_id" value="<%= data._id %>">
+		<input type="file" name="img">
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

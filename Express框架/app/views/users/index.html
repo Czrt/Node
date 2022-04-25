@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <% if(admin){%>
+    <h2>欢迎
+        <%= admin.username%>登录</h2>
+    <h2><a href="/regout">退出</a></h2>
+    <%}else{%>
+    <h2><a href="/reg">登录</a></h2>
+    <h2><a href="/login">注册</a></h2>
+    <%}%>
+    <h3 style="float: right;">users首页</h3>
+    <h3><a href="/login">添加用户</a></h3>
+    <form>
+        <!--给表单赋默认值,后端将url地址栏的参数通过req.query获取并返回给前端页面，前端通过ejs输出 -->
+        <input type="text" name="username" value="<%= sousuo.username%>" placeholder="搜索用户名">
+        <input type="number" name="minage" value="<%= sousuo.minage%>" placeholder="最小年龄">
+        <input type="number" name="maxage" value="<%= sousuo.maxage%>" placeholder="最大年龄">
+        <input type="submit" value="搜索">
+    </form>
+    <!-- <a href="?of=1&<%= qsStr%>">升序</a>
+<a href="?of=-1&<%= qsStr%>">降序</a> -->
+    <!-- 要实现一个按钮控制排序，前端页面代码 -->
+    <%if(sousuo.of ==1){%>
+    <a href="?of=-1&<%= obj%>">降序</a>
+    <%}else{%>
+    <a href="?of=1&<%= obj%>">升序</a>
+    <%}%>
+    <table border="1px">
+        <tr>
+            <th>id</th>
+            <th>用户名</th>
+            <th>头像</th>
+            <th>密码</th>
+            <th>年龄</th>
+            <th>IP</th>
+            <th>注册时间</th>
+        </tr>
+        <% data.forEach(function(value,key){%>
+        <tr>
+            <td>
+                <%= value._id %>
+            </td>
+            <td>
+                <%= value.username %>
+            </td>
+            <td width="100px" height="100px">
+                <img src="/upload/<%= value.IMG %>" alt="" width="100%">
+            </td>
+            <td>
+                <%= value.password %>
+            </td>
+            <td>
+                <%= value.age%>
+            </td>
+            <td>
+                <%= value.IP %>
+            </td>
+            <td class="time">
+                <%= value.date %>
+            </td>
+            <td><a href="/users/shanchu/<%= value._id%>">删除</a></td>
+            <td><a href="/users/update?_id=<%= value._id%>">修改</a></td>
+            <td><a href="/users/password/<%= value._id%>">修改密码</a></td>
+            <td><a href="/users/images/<%= value._id%>">添加头像</a></td>
+        </tr>
+        <%})%>
+        <tr>
+            <td colspan="9">
+                <!-- 上一页超出判断 三元运算符-->
+                <a href="?page=<%=Number(sousuo.page)-1 ==0?1:Number(sousuo.page)-1%>&<%=obj%>">上一页</a>
+                <a href="?page=1">1</a>
+                <a href="?page=2">2</a>
+                <a href="?page=3">3</a>
+                <a href="?page=4">4</a>
+                <a href="?page=<%= Number(sousuo.page)+1 >tatl?tatl:Number(sousuo.page)+1%>&<%=obj%>">下一页</a>
+            </td>
+        </tr>
+    </table>
+    <!-- 引入事件格式插件moment -->
+    <script type="text/javascript" src="/moment/moment.js"></script>
+    <script>
+    var time = document.querySelectorAll(".time");
+    for (var i = 0; i < time.length; i++) {
+        ////通过moment().format("YYYY-MM-DD HH:mm:ss");将时间转化为2022-04-12 20:05:42这种格式
+        time[i].innerHTML = moment(time[i].innerHTML).format("YYYY-MM-DD HH:mm:ss")
+    }
+    </script>
+</body>
+
+</html>

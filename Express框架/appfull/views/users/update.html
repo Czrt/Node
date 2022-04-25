@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>修改用户</h3>
+	<form action="/users/update" method="post">
+		<input type="hidden" name="_id" value="<%= data._id %>">
+		<table width="500" border="1">
+			<tr>
+				<th>姓名</th>
+				<td><input type="text" name="username" value="<%= data.username %>"></td>
+			</tr>
+			<tr>
+				<th>年龄</th>
+				<td><input type="number" name="age" value="<%= data.age %>"></td>
+			</tr>
+			<tr>
+				<th>性别</th>
+				<td>
+					<!-- data.sex 男 女 -->
+					<!-- 如果data.sex为男，则让男默认选中 -->
+					<input type="radio" name="sex" value="男" <%= data.sex=='男' ? 'checked' : '' %>>男
+					<!-- 如果data.sex为女，则让女默认选中 -->
+					<input type="radio" name="sex" value="女" <%= data.sex=='女' ? 'checked' : '' %>>女
+				</td>
+			</tr>
+			<tr>
+				<th>手机号码</th>
+				<td>
+					<input type="text" name="phone" value="<%= data.phone %>">
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2">
+					<input type="submit" value="提交">
+				</th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

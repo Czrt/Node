@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(200deg,#e3c5eb,#a9c1ed);
+        }
+        .login{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width:350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .login div{
+            width: 280px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 65px auto 70px;
+        }
+        .login input{
+            display: block;
+            width: 280px;
+            height: 30px;
+            margin:12px auto;
+            outline: none;
+            border: none;
+            text-indent: 8px;
+            border-bottom: 1px solid #999;
+  
+        }
+        .login button{
+            display: block;
+            width: 280px;
+            height: 40px;
+            background:linear-gradient(45deg,#e3c5eb,#a9c1ed);
+            margin: 35px auto 40px;
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            letter-spacing: 8px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .login span{
+            font-size: 14px;
+
+        }
+        .login span a{
+            color: plum;
+            text-decoration: none;
+        }
+        ul li{
+            list-style: none;   
+        }
+        .square li{
+            position: absolute;
+            width:30px;
+            height: 30px;
+            border:1px solid white;
+            animation: square 6s linear infinite;
+            opacity: 0;
+        }
+        .square li:nth-child(1){
+            top:80vh;
+            left: 20vw;
+            /* animation-delay: 2s; */
+        }
+        .square li:nth-child(2){
+            top:80vh;
+            left: 80vw;
+            animation-delay: 2s;
+
+        }
+        .square li:nth-child(3){
+            top:20vh;
+            left: 20vw;
+            animation-delay: 4s;
+
+        }
+        .square li:nth-child(4){
+            top:20vh;
+            left: 80vw;
+            animation-delay: 6s;
+
+        }
+
+        @keyframes square{
+            0%{
+                transform: scale(0) rotateY(0);
+                opacity:1;
+            }
+            100%{
+                transform: scale(5) rotateY(1000deg);
+                opacity:0;
+            }
+        }
+        .regError{
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <div>注册页</div>
+        <form action="/login" method="post" onsubmit="return check()">
+            <input type="text" name="username" value="" class="username" placeholder="用户名">
+            <input type="password" name="password" value="" class="password" placeholder="密码">
+            <input type="number" name="age" class="age" placeholder="年龄">
+            <button type="submit" onsubmit="false">注册</button>
+            <span>已有账号?<a href="/reg">去登录</a></span>
+        </form>
+        <p>
+            <%= loginError%>
+        </p>
+    </div>
+    <ul class="square">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script src="javascripts/jquery.min.js"></script>
+    <script>
+    //////jqueryAJAX发送用户名
+    $(function() {
+        console.log($(".username"))
+        $(".username").blur(function() {
+            if ($(this).val() == "") {
+                alert("用户名为空")
+            } else {
+                $.post("/userajax", { username: $(this).val() }, function(msg) {
+                    if (msg.success == 0) {
+                        alert("用户名已存在，请更换其他名字:" + msg.more.join("||||"))
+                    } else {
+                        alert("用户名可用")
+                    }
+                });
+            }
+        })
+    })
+
+    ///////限制用户提交注册(阻止表单提交)
+    function check() {
+        if ($(".username").val() == "") {
+            alert("用户名为空")
+            return false
+        };
+        if ($(".password").val() == "") {
+            alert("密码为空")
+            return false
+        };
+        if ($(".age").val() == "") {
+            alert("年龄为空")
+            return false
+        };
+    }
+    </script>
+</body>
+
+</html>-

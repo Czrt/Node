@@ -1,0 +1,1706 @@
+body {
+    min-height: 2730px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*头部左侧样式开始*/
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 1280px;
+    height: 40px;
+    background-color: #333333;
+    z-index: 99999;
+}
+
+
+/*z-index第一次*/
+
+.header-left {
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.header-left li {
+    float: left;
+    height: 40px;
+}
+
+.header-left li a {
+    color: #cccccc;
+    width: 28px;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.top-bar {
+    display: inline-block;
+    background: url(http://static.meishichina.com/v6/img/lib/top-bar110.png) no-repeat scroll 0 0/55px auto;
+    width: 55px;
+    height: 14px;
+    margin-right: 10px;
+}
+
+.header-left li:last-child {
+    color: white;
+    width: 30px;
+    height: 40px;
+}
+
+.header-left li:hover {
+    background: #0D0D0D;
+}
+
+.header-left li:hover a {
+    color: #fff;
+}
+
+.header .erji a {
+    display: block;
+    width: 46px;
+    height: 40px;
+    padding: 0 10px;
+    background: #333333;
+}
+
+.erji {
+    position: absolute;
+    top: 40px;
+    left: 515px;
+    display: none;
+}
+
+.header-left li:last-child:hover .erji {
+    display: block;
+}
+
+.header .erji a:hover {
+    background: #0D0D0D;
+    color: #fff;
+}
+
+
+/*头部左侧样式结束*/
+
+
+/*头部右侧样式开始*/
+
+.header-right li {
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+.header-right {
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.header-right img {
+    /*position:absolute;
+	top:10px;
+	left:;*/
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: 20px;
+}
+
+.header-right li {
+    height: 40px;
+    width: 60px;
+}
+
+.header-right li a {
+    color: white;
+    /*width:40px;*/
+    /*height:40px;*/
+    /*padding: 0 10px;*/
+}
+
+.line {
+    line-height: 40px;
+}
+
+.header-right .line a {
+    color: #cccccc;
+}
+
+.line:hover {
+    background: #0D0D0D;
+}
+
+.line:hover a {
+    color: #fff;
+}
+
+.erji2 div:first-child {
+    background: #585757;
+}
+
+.erji2 div:last-child {
+    background: #A9A9A9;
+}
+
+.erji2 {
+    margin-top: 2px;
+    color: #F1F1F1;
+    display: none;
+}
+
+.header-right .disange:hover {
+    background: #0D0D0D;
+}
+
+.header-right>li:nth-child(3):hover .erji2 {
+    display: block;
+    color: #fff;
+}
+
+.header-right li:nth-child(4) {
+    background: #59C3D1;
+}
+
+.erji3 {
+    line-height: 40px;
+    display: none;
+}
+
+.erji3 li a {
+    color: #F1F1F1;
+}
+
+.erji3 li:nth-child(1) {
+    background: #8ecdd8;
+}
+
+.erji3 li:nth-child(2) {
+    background: #a6dfea;
+}
+
+.erji3 li:nth-child(3) {
+    background: #adecf8;
+}
+
+.header-right li:nth-child(4):hover .erji3 {
+    display: block;
+    color: #fff;
+}
+
+.erji3 li:hover a {
+    color: #fff;
+}
+
+.header-right li:nth-child(5) {
+    background: #FFA859;
+}
+
+.header-right li:nth-child(6) {
+    background: #FE5761;
+}
+
+.erji4 img {
+    position: absolute;
+    right: 5px;
+    width: 100px;
+    height: 100px;
+    margin-top: 7px;
+    display: none;
+}
+
+.header-right li:last-child:hover .erji4 img {
+    display: block;
+}
+
+
+/*头部右侧样式结束*/
+
+
+/*页面样式开始*/
+
+#container {
+    width: 990px;
+    margin: 0 auto;
+}
+
+.nav {
+    width: 990px;
+    height: 65px;
+    padding-top: 50px;
+}
+
+.nav a:first-child img {
+    width: 108px;
+    height: 50px;
+    float: left;
+}
+
+.nav .search {
+    float: right;
+    margin-top: 15px;
+}
+
+.nav ul {
+    display: block;
+    float: right;
+    padding-right: 40px;
+}
+
+.nav ul li {
+    width: 40px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    float: left;
+    padding: 0px 10px 5px 10px;
+}
+
+.nav ul li:first-child {
+    color: #ff6767;
+}
+
+.nav ul li:hover {
+    color: #ff6767;
+}
+
+.nav .search a {
+    display: block;
+    float: right;
+    width: 80px;
+    height: 28px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    background: #999;
+}
+
+.nav .search input {
+    width: 160px;
+    height: 20px;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+.search a:hover {
+    background-color: #ff6767;
+}
+
+
+/*轮播图样式开始*/
+
+
+/*z-index第二个*/
+
+.lunbo {
+    position: relative;
+    width: 990px;
+    height: 360px;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.lun li img {
+    position: absolute;
+    width: 990px;
+    height: 360px;
+    display: none;
+}
+
+.lun li:first-child img {
+    display: block;
+}
+
+
+/*轮播图的小点点样式开始*/
+
+.lunbo ol {
+    position: absolute;
+    top: 330px;
+    right: 10px;
+}
+
+.lol li {
+    float: left;
+}
+
+.lol li span {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border: 3px solid #999;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.lol li .active {
+    border: 3px solid #ff6767;
+}
+
+
+/*轮播图的左右箭头样式开始*/
+
+.left {
+    position: absolute;
+    top: 180px;
+    left: 220px;
+    width: 40px;
+    height: 60px;
+}
+
+.left a i {
+    font-size: 34px;
+    display: inline-block;
+    width: 17px;
+    height: 30px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+
+/*z-index第三个*/
+
+.left a {
+    width: 40px;
+    height: 60px;
+    z-index: 99;
+}
+
+.right a {
+    width: 40px;
+    height: 60px;
+    z-index: 99;
+}
+
+.right {
+    position: absolute;
+    top: 180px;
+    right: 0px;
+    width: 40px;
+    height: 60px;
+}
+
+.right a i {
+    font-size: 34px;
+    display: inline-block;
+    width: 17px;
+    height: 30px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.lunbo .left:hover {
+    background: #000;
+}
+
+.lunbo .right:hover {
+    background: #000;
+}
+
+
+/*轮播图选项卡样式*/
+
+.left-erji {
+    position: absolute;
+    width: 220px;
+    height: 330px;
+    padding-top: 30px;
+    background: rgba(68, 68, 68, .4);
+}
+
+.left-erji ul li a {
+    display: block;
+    width: 220px;
+    height: 20px;
+    padding: 20px 0px;
+    line-height: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+.left-erji ul li a i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px 0px 20px;
+    background: url(http://static.meishichina.com/v6/img/model/icon.png) no-repeat scroll 0 0/auto 20px;
+}
+
+.left-erji ul li a b {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 0px 10px 0px 20px;
+    background: url(http://static.meishichina.com/v6/img/model/icon.png) no-repeat scroll 0 0/auto 20px;
+    background-position: -100px;
+}
+
+.left-erji ul li:nth-child(2) a i {
+    background-position: -20px;
+}
+
+.left-erji ul li:nth-child(3) a i {
+    background-position: -120px;
+}
+
+.left-erji ul li:nth-child(4) a i {
+    background-position: -60px;
+}
+
+.left-erji ul li:nth-child(5) a i {
+    background-position: -80px;
+}
+
+.left-erji ul li:hover {
+    background-color: #ff6767;
+}
+
+
+/*轮播左侧二级选项卡1*/
+
+.left-erji1 {
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    width: 480px;
+    height: 360px;
+    background: white;
+    display: none;
+    z-index: 999;
+}
+
+.left-erji1 ul {
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.left-erji1 li {
+    text-align: center;
+    width: 130px;
+    height: 80px;
+    font-size: 18px;
+    float: left;
+}
+
+.left-erji ul li .left-erji1 li a {
+    color: black;
+    width: 130px;
+    height: 80px;
+}
+
+.left-erji1 li span {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.left-erji ul li .left-erji1 li:hover a {
+    color: red;
+}
+
+.left-erji ul li:hover .left-erji1 {
+    display: block;
+}
+
+.left-erji ul li:hover .left-erji1 li {
+    background: white;
+}
+
+
+/*轮播左侧二级选项卡2*/
+
+.left-erji2 {
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    width: 480px;
+    height: 360px;
+    background: white;
+    display: none;
+    z-index: 999;
+}
+
+.left-erji2 ul {
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.left-erji2 li {
+    text-align: center;
+    width: 130px;
+    height: 80px;
+    font-size: 18px;
+    float: left;
+}
+
+.left-erji ul li .left-erji2 li a {
+    color: black;
+    width: 130px;
+    height: 80px;
+}
+
+.left-erji2 li span {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.left-erji ul li .left-erji2 li:hover a {
+    color: red;
+}
+
+.left-erji ul li:hover .left-erji2 {
+    display: block;
+}
+
+.left-erji ul li:hover .left-erji2 li {
+    background: white;
+}
+
+
+/*轮播左侧二级选项卡3*/
+
+.left-erji3 {
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    width: 480px;
+    height: 360px;
+    background: white;
+    display: none;
+    z-index: 999;
+}
+
+.left-erji3 ul {
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.left-erji3 li {
+    text-align: center;
+    width: 130px;
+    height: 80px;
+    font-size: 18px;
+    float: left;
+}
+
+.left-erji ul li .left-erji3 li a {
+    color: black;
+    width: 130px;
+    height: 80px;
+}
+
+.left-erji3 li span {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.left-erji ul li .left-erji3 li:hover a {
+    color: red;
+}
+
+.left-erji ul li:hover .left-erji3 {
+    display: block;
+}
+
+.left-erji ul li:hover .left-erji3 li {
+    background: white;
+}
+
+
+/*轮播左侧二级选项卡4*/
+
+.left-erji4 {
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    width: 480px;
+    height: 360px;
+    background: white;
+    display: none;
+    z-index: 999;
+}
+
+.left-erji4 ul {
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.left-erji4 li {
+    text-align: center;
+    width: 130px;
+    height: 80px;
+    font-size: 18px;
+    float: left;
+}
+
+.left-erji ul li .left-erji4 li a {
+    color: black;
+    width: 130px;
+    height: 80px;
+}
+
+.left-erji4 div img {
+    width: 200px;
+}
+
+.left-erji4 div {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.left-erji4 li span {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.left-erji ul li .left-erji4 li:hover a {
+    color: red;
+}
+
+.left-erji ul li:hover .left-erji4 {
+    display: block;
+}
+
+.left-erji ul li:hover .left-erji4 li {
+    background: white;
+}
+
+
+/*轮播左侧二级选项卡5*/
+
+.left-erji5 {
+    position: absolute;
+    top: 0px;
+    left: 220px;
+    width: 480px;
+    height: 360px;
+    background: white;
+    display: none;
+    z-index: 999;
+}
+
+.left-erji5 div:first-child {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+.left-erji5 div:first-child img {
+    width: 100px;
+}
+
+.left-erji5 div:last-child img {
+    width: 480px;
+    margin-top: 60px;
+}
+
+.left-erji4 div {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.left-erji ul li .left-erji5 li:hover a {
+    color: red;
+}
+
+.left-erji ul li:hover .left-erji5 {
+    display: block;
+}
+
+.left-erji ul li:hover .left-erji5 li {
+    background: white;
+}
+
+
+/*轮播2样式*/
+
+.wenzi-lunbo-dianji {
+    position: relative;
+    top: 380px;
+    width: 990px;
+    height: 90px;
+    margin: 0 auto;
+    padding: 15px 0;
+    background: #eee;
+}
+
+.lunbo12 {
+    position: relative;
+    width: 910px;
+    height: 90px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.lunbo12 ul li {
+    width: 303px;
+    height: 90px;
+    float: left;
+    margin-right: 2px;
+}
+
+.lunbo12 ul li p {
+    color: #333;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.lunbo12 ul li p span {
+    color: #999;
+}
+
+.lunbo12 ul li h2 a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.lunbo12 ul li h2 a:hover {
+    color: #ff6767;
+    text-decoration: underline;
+}
+
+.lunbo12 ul li h2 {
+    font-weight: 400;
+    padding-bottom: 8px;
+}
+
+.lunbo12 ul {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 9999999px;
+}
+
+.lunbo12-left {
+    position: absolute;
+    left: 5px;
+    top: 45px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #a7a7a7;
+    display: none;
+}
+
+.lunbo12-left a {
+    color: #333;
+}
+
+.wenzi-lunbo-dianji>span i {
+    width: 12px;
+    height: 21px;
+}
+
+.lunbo12-right {
+    position: absolute;
+    top: 45px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    color: #333;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #a7a7a7;
+    display: none;
+}
+
+.lunbo12-right a {
+    color: #333;
+}
+
+.lunbo12-right>span i {
+    width: 12px;
+    height: 21px;
+}
+
+
+/**选项卡样式开始*************************有bug****/
+
+.xuanxiangka {
+    width: 990px;
+    height: 386px;
+    margin: 0px auto;
+    margin-top: 400px;
+    margin-bottom: 50px;
+}
+
+.ka1 {
+    float: left;
+}
+
+.ka1-title {
+    width: 310px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ka1-title .active1 {
+    border-bottom: 3px solid red;
+    color: red;
+}
+
+.ka1-title a {
+    color: black;
+}
+
+.ka1-title h2 {
+    width: 40px;
+    height: 30px;
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.ka1-title a:last-child {
+    float: right;
+}
+
+.ka1 img {
+    width: 310px;
+    height: 124px;
+    margin-top: 10px;
+}
+
+.ka1-1 li {
+    padding-top: 10px;
+}
+
+.ka1-1 li a:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.ka1-1 li a {
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+}
+
+.ka1-1 li:hover a {
+    color: red;
+}
+
+.ka1-2 {
+    width: 310px;
+    display: none;
+}
+
+.ka1-2 li a {
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #e1e1e1;
+    color: #333;
+    float: left;
+    margin: 10px 10px 5px 0px;
+}
+
+.ka1-2 li a:hover {
+    color: #ff6767;
+    border: 1px solid #ff6767;
+}
+
+.ka2 {
+    float: left;
+    padding: 0px 20px;
+}
+
+.ka2-title {
+    width: 310px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ka2-title .active1 {
+    border-bottom: 3px solid red;
+    color: red;
+}
+
+.ka2-title a {
+    color: black;
+}
+
+.ka2-title h2 {
+    width: 40px;
+    height: 30px;
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.ka2-title a:last-child {
+    float: right;
+}
+
+.ka2 img {
+    width: 310px;
+    height: 124px;
+    margin-top: 10px;
+}
+
+.ka2-1 li {
+    padding-top: 10px;
+}
+
+.ka2-1 li a:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.ka2-1 li a {
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+}
+
+.ka2-1 li:hover a {
+    color: red;
+}
+
+.ka2-2 {
+    width: 310px;
+    display: none;
+}
+
+.ka2-2 li a {
+    /*display:inline-block;*/
+    width: 90px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #e1e1e1;
+    color: #333;
+    float: left;
+    margin: 10px 10px 5px 0px;
+}
+
+.ka2-2 li a:hover {
+    color: #ff6767;
+    border: 1px solid #ff6767;
+}
+
+.ka3 {
+    float: left;
+}
+
+.ka3-title {
+    width: 310px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ka3-title .active1 {
+    border-bottom: 3px solid red;
+    color: red;
+}
+
+.ka3-title a {
+    color: black;
+}
+
+.ka3-title h2 {
+    width: 80px;
+    height: 30px;
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.ka3-title a:last-child {
+    float: right;
+}
+
+.ka3 img {
+    width: 310px;
+    height: 124px;
+    margin-top: 10px;
+}
+
+.ka3-1 li {
+    padding-top: 10px;
+}
+
+.ka3-1 li a:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.ka3-1 li a {
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+}
+
+.ka3-1 li:hover a {
+    color: red;
+}
+
+.active2 {
+    color: red;
+    border-bottom: 3px solid red;
+}
+
+
+/*选项卡样式结束*/
+
+
+/*8图样式开始*/
+
+.nav1 {
+    width: 990px;
+    height: 37px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav1 h3 {
+    float: left;
+}
+
+.nav1 h3 a {
+    display: inline-block;
+    color: #666;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+    padding-bottom: 17px;
+}
+
+.nav1 span {
+    float: right;
+}
+
+.nav1 span a {
+    color: #333;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.nav1 span a:hover {
+    color: red;
+}
+
+.active3 {
+    color: red;
+    border-bottom: 3px solid red;
+}
+
+.tupian {
+    width: 990px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.tupian ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tupian ul li {
+    /*overflow: hidden;*/
+    text-align: center;
+}
+
+.tupian ul li p {
+    font-size: 18px;
+    height: 21px;
+    padding: 8px 0px 2px 0px;
+}
+
+.tupian ul li a {
+    display: inline-block;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.fangda {
+    width: 230px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.tupian ul li img {
+    width: 230px;
+    height: 230px;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.tupian ul li:hover {
+    color: red;
+}
+
+.tupian ul li a:hover {
+    color: red;
+}
+
+.tupian ul li img:hover {
+    width: 250px;
+    height: 250px;
+    transform: scale(1, 1);
+}
+
+
+/**/
+
+.tupian1 {
+    width: 990px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.tupian1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tupian1 ul li {
+    /*overflow: hidden;*/
+    text-align: center;
+}
+
+.tupian1 ul li p {
+    font-size: 18px;
+    height: 21px;
+    padding: 8px 0px 2px 0px;
+}
+
+.tupian1 ul li a {
+    display: inline-block;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.tupian1 ul li img {
+    width: 230px;
+    height: 230px;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.tupian1 ul li:hover {
+    color: red;
+}
+
+.tupian1 ul li a:hover {
+    color: red;
+}
+
+.tupian1 ul li img:hover {
+    width: 250px;
+    height: 250px;
+    transform: scale(1, 1);
+}
+
+
+/**/
+
+.tupian2 {
+    width: 990px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.tupian2 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tupian2 ul li {
+    /*overflow: hidden;*/
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tupian2 ul li p {
+    font-size: 18px;
+    height: 21px;
+    padding: 8px 0px 2px 0px;
+}
+
+.tupian2 ul li img {
+    width: 230px;
+    height: 230px;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.tupian2 ul li:hover {
+    color: red;
+}
+
+.tupian2 ul li img:hover {
+    width: 250px;
+    height: 250px;
+    transform: scale(1, 1);
+}
+
+
+/*.tupian,.tupian1,.tupian2{
+		position: absolute;
+		/*left:136.5px;
+	}*/
+
+.tupian1,
+.tupian2 {
+    display: none;
+}
+
+.tupianzhanshi {
+    width: 990px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.nav2 {
+    width: 990px;
+    height: 37px;
+    line-height: 37px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav2 h3 {
+    float: left;
+}
+
+.nav2 h3 a {
+    display: inline-block;
+    color: red;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.nav2 span {
+    float: right;
+}
+
+.nav2 span a {
+    color: #333;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.nav2 span a:hover {
+    color: red;
+}
+
+.active4 {
+    color: red;
+    border-bottom: 3px solid red;
+}
+
+.tupian3 {
+    width: 990;
+    height: 370px;
+    margin-top: 10px;
+}
+
+.tupian3 img {
+    width: 126px;
+    height: 126px;
+}
+
+.tupian3 ul li {
+    width: 126px;
+    height: 175px;
+    float: left;
+    text-align: center;
+    margin: 10px 15px 0px 0px;
+}
+
+.tupian3 ul li a {
+    color: #333;
+}
+
+.tupian3 ul li span {
+    color: #999;
+    font-size: 12px;
+}
+
+.tupian3 ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+
+/*)))))))))))))))))))))))))))))))))*/
+
+.nav3 {
+    width: 990px;
+    height: 37px;
+    line-height: 37px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+.nav3 h3 {
+    float: left;
+}
+
+.nav3 h3 a {
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+
+.nav3 span {
+    float: right;
+}
+
+.nav3 span a {
+    color: #333;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.nav3 span a:hover {
+    color: red;
+}
+
+.jinghua {
+    color: #333;
+}
+
+.active5 {
+    color: red;
+    border-bottom: 3px solid red;
+}
+
+
+/*评论区样式开始*/
+
+.huati {
+    position: relative;
+}
+
+.pinglun {
+    width: 990px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pinglun li {
+    width: 460px;
+    height: 225px;
+}
+
+.touxiang {
+    width: 460px;
+    height: 40px;
+    float: left;
+}
+
+.yonghuming {
+    width: 368px;
+    height: 41px;
+    float: left;
+    margin-left: 10px;
+}
+
+.yonghuming a {
+    color: #111;
+    font-size: 14px;
+}
+
+.yonghuming span {
+    display: block;
+    color: #666;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.yonghuming a:hover {
+    text-decoration: underline;
+}
+
+.touxiang img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+}
+
+.tuwen img {
+    width: 100px;
+    padding-top: 10px;
+}
+
+.tuwen a:first-child {
+    color: #666;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.tuwen b {
+    font-weight: bold;
+}
+
+.tuwen span {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+
+/**/
+
+.touxiang2 {
+    width: 460px;
+    height: 40px;
+    float: left;
+}
+
+.yonghuming2 {
+    width: 368px;
+    height: 41px;
+    float: left;
+    margin-left: 10px;
+}
+
+.yonghuming2 a {
+    color: #111;
+    font-size: 14px;
+}
+
+.yonghuming2 span {
+    display: block;
+    color: #666;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.yonghuming2 a:hover {
+    text-decoration: underline;
+}
+
+.touxiang2 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+}
+
+.tuwen2 img {
+    width: 100px;
+    padding-top: 10px;
+}
+
+.tuwen2 a:first-child {
+    color: #666;
+    line-height: 20px;
+    /*font-size:20px;*/
+}
+
+.tuwen2 span {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+
+/**************************************/
+
+.duotu {
+    position: absolute;
+    top: 50px;
+    width: 990px;
+    margin: 0 auto;
+    display: none;
+}
+
+.duotu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.duotu ul li {
+    height: 248px;
+    text-align: center;
+}
+
+.duotu ul li img {
+    width: 230px;
+    height: 173px;
+}
+
+.duotu ul li p {
+    font-size: 18px;
+    color: #333;
+    padding: 8px 0px 2px 0px;
+}
+
+.duotu ul li a {
+    color: #999;
+    font-size: 12px;
+}
+
+.duotu ul li p:hover {
+    color: red;
+}
+
+.duotu ul li a:hover {
+    color: red;
+}
+
+.zuihou {
+    position: absolute;
+    top: 2500px width: 990px;
+    height: 154px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.zuihou-left {
+    width: 770px;
+    height: 53px;
+    float: left;
+}
+
+.zuihou-left p {
+    margin-bottom: 6px;
+}
+
+.zuihou-left p:first-child a {
+    color: #f40;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.zuihou-left p:last-child a {
+    color: #666;
+    font-size: 12px;
+}
+
+.zuihou-left p:last-child a:hover {
+    color: red;
+}
+
+.zuihou-left p:first-child a:hover {
+    text-decoration: underline;
+}
+
+.erweima {
+    width: 82px;
+    float: right;
+    font-size: 12px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.erweima img {
+    width: 82px;
+    height: 82px
+}
+
+.wangzhi {
+    width: 990px;
+    margin-top: 110px;
+}
+
+.wangzhi ul li {
+    float: left;
+    height: 19px;
+    font-size: 12px;
+    padding-right: 12px;
+}
+
+.wangzhi ul li:first-child {
+    font-weight: bold;
+}
+
+.wangzhi ul li a {
+    color: #666;
+}
+
+.banquan {
+    width: 990px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 50px;
+}
+
+.shiming img {
+    width: 60px;
+    height: 23px;
+    float: right;
+    margin-top: 10px;
+}
+
+.banquan p {
+    font-size: 12px;
+    color: #666;
+    float: left;
+}
+
+
+/*锚点*/
+
+.maodian img {
+    position: fixed;
+    top: 620px;
+    right: 60px;
+    width: 58px;
+    height: 58px;
+}
+
+.maodian {
+    display: none;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        div{
+            width: 600px;
+            height: 300px;
+            background-color: pink;
+            color: red;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <input type="text" class="content">
+    <button>发送</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    var btn = document.querySelectorAll("button");
+    var content = document.querySelector(".content");
+    var div = document.querySelector("div");
+
+    /////用户输入用户名
+    var username = prompt("请输入你的昵称");
+
+    if (username) {
+        var socket = io('http://localhost:3000');
+        socket.on("connect", function() {
+            console.log("浏览器链接服务器成功")
+        })
+        socket.on("disconnect", function() {
+            console.log("断开连接")
+        })
+        //////接收数据事件 message参数要与后台socket.emit中的参数保持一致，我们统一用message
+        socket.on("message", function(msg) {
+            console.log("接收到的数据", msg);
+
+            /////判断是否是自己发送，如果是自己发送则在右边显示
+            if (msg.username == username) {
+                div.innerHTML += '<p style="text-align:right">' + msg.username + "说：" + msg.value + "</p>";
+            } else {
+                div.innerHTML += "<P>" + msg.username + "说：" + msg.value + "</p>";
+            }
+        })
+
+        btn[0].onclick = function() {
+            console.log(content.value);
+            socket.emit("msg", { value: content.value, username: username })
+        }
+    } else {
+        alert("请输入你的昵称")
+    }
+    </script>
+</body>
+
+</html>

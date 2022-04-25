@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<% if (admin) { %>
+	<h3>欢迎<%= admin.username %></h3>
+	<h3><a href="/logout">退出</a></h3>
+	<% } else { %>
+	<h3><a href="/login">请登录</a></h3>
+	<h3><a href="/reg">请注册</a></h3>
+	<% } %>
+	
+	<h3>用户首页</h3>
+	<h3><a href="/users/create">添加用户</a></h3>
+
+	<!-- 不写提交地址，就是提交当前页面，请求方式是get -->
+	<form action="" method="">
+		<!-- 给表单赋予默认值，只需要给value值赋值
+			只有req.query知道URL地址栏的？之后的参数
+		 -->
+		<input type="text" name="username" value="<%= where.username %>" placeholder="按姓名搜索">
+		<input type="text" name="phone" value="<%= where.phone %>" placeholder="按手机号码搜索">
+		<input type="number" name="minage" value="<%= where.minage %>" placeholder="最小年龄">
+		<input type="number" name="maxage" value="<%= where.maxage %>" placeholder="最大年龄">
+		<input type="submit" value="提交">
+	</form>
+
+	<% if (where.agesort == 1) { %>
+	<a href="?agesort=-1&<%= qsStr %>">降序</a>
+	<% } else { %>
+	<a href="?agesort=1&<%= qsStr %>">升序</a>
+	<% } %>
+
+	<table width="1200" border="1">
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>头像</th>
+			<th>手机号码</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>注册时间</th>
+			<th>注册IP</th>
+			<th>操作</th>
+		</tr>
+		<% data.forEach(function(value,key){ %>
+		<tr>
+			<td><%= value._id %></td>
+			<td><%= value.username %></td>
+			<td>
+				<% if (value.img) { %>
+				<img src="/uploads/<%= value.img %>" width="50" alt="">
+				<% }else{ %>
+				<img src="/uploads/logo.jpg" width="50" alt="">
+				<% } %>
+			</td>
+			<td><%= value.phone %></td>
+			<td><%= value.age %></td>
+			<td><%= value.sex %></td>
+			<td class="time"><%= value.addtime %></td>
+			<td><%= value.ip %></td>
+			<td>
+				<a href="/users/remove/<%= value._id %>">删除</a>
+				<a href="/users/update/<%= value._id %>">修改</a>
+				<a href="/users/image/<%= value._id %>">添加头像</a>
+				<a href="/users/pass/<%= value._id %>">修改密码</a>
+			</td>
+		</tr>
+		<% }) %>
+		<tr>
+			<td colspan="9">
+				当前第<%= where.page %>页 共<%= totalPage %>页
+				<a href="?page=<%= Number(where.page)-1 < 1 ? 1 : Number(where.page)-1  %>&<%= qsStr %>">上一页</a>
+				<a href="?page=<%= Number(where.page)+1 > totalPage ? totalPage : Number(where.page)+1 %>&<%= qsStr %>">下一页</a>
+			</td>
+		</tr>
+	</table>
+	<script src="/moment/moment.js"></script>
+	<script>
+	var time = document.querySelectorAll('.time');
+
+	for (var i = 0; i < time.length; i++) {
+		// console.log(time[i].innerHTML);
+		time[i].innerHTML = moment(time[i].innerHTML).format('YYYY-MM-DD HH:mm:ss');
+	}
+	</script>
+</body>
+</html>

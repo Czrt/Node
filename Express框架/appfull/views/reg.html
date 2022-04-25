@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>注册</h3>
+	<form action="/reg" method="post">
+		用户名：<input type="text" class="username" name="username" value=""><br><br>
+		密码：<input type="password" name="password" value=""><br><br>
+		手机号码：<input type="text" name="phone" value=""><button type="button">点击发送</button><br><br>
+		验证码：<input type="text" name="code" value=""><br><br>
+		<input type="submit" value="提交">
+	</form>
+
+	<script src="/javascripts/jquery.min.js"></script>
+	<script>
+	// 1.给用户注册页面，让用户输入他喜欢的名字
+	// 2.用户输入之后，input会有失去焦点事件
+	// 3.利用失去焦点事件，通过ajax技术，将输入的用户名发送到服务器
+	// 4.nodejs接收到用户名，并连接数据库进行查询
+	// 5.查询到数据，证明用户存在，查询不到，证明不存在
+	$(function(){
+		$('.username').blur(function(){
+			// 先检查用户名的格式是否正确
+
+			// 将用户名发送到服务器
+			var value = $(this).val();
+
+			// $.get()和$.post()里面第一个参数的地址和a连接的参数地址格式是一模一样的
+			$.post('/check',{username:value},function(msg){
+				if (msg.success == 1) {
+					alert('用户名已经存在，请重新输入');
+				} else {
+					alert('恭喜您，用户名可用');
+				}
+			})
+		})
+	})
+	</script>
+</body>
+</html>

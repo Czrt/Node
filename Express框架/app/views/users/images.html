@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if(admin){%>
+    <h1>欢迎
+        <%= admin.username%>登录</h1>
+    <h1><a href="/regout">退出</a></h1>
+    <%}else{%>
+    <h1><a href="/reg">登录</a></h1>
+    <h1><a href="/login">注册</a></h1>
+    <%}%>
+    <h2>添加头像</h2>
+    <form action="/users/images" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_id" value="<%=data._id%>">
+        选取图片：<input type="file" name="touxiang"><br><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

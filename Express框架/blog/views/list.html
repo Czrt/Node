@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>列表页</h2>
+    <!-- get传递参数 -->
+    <ul>
+        <!-- 通过/传参 -->
+        <li><a href="/sousuo/zhangsan/20">url地址有参数</a></li>
+        <!-- 通过?传参 -->
+        <li><a href="/search?username=zhangsan&age=20">url地址有参数</a></li>
+    </ul>
+    <!-- post传参 -->
+    <form action="/list" method="post">
+        用户名<input type="text" name="username"><br><br>
+        密码<input type="password" name="password"><br><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

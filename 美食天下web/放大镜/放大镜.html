@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			position: relative;
+			width:220px;
+			height:316.5px;
+			border:1px solid red;
+		}
+		.container>img{
+			width:220px;
+		}
+		.datu{
+			position: absolute;
+			left:300px;
+			top:0;
+			width:220px;
+			height: 316.5px;
+			border:1px solid black;
+			overflow: hidden;
+			display: none;
+		}
+		.datu img{
+			width:440px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="http://i3.meishichina.com/attachment/recipe/2017/06/21/2017062114980116354596357690.jpg@!p800" alt="">
+		<div class="datu">  
+			<img src="http://i3.meishichina.com/attachment/recipe/2017/06/21/2017062114980116354596357690.jpg@!p800" alt="">
+		</div>
+	</div>
+	<script src="jquery.min.js"></script>
+	<script>
+	// var p = document.querySelector('.container')		
+	$('.container').mouseover(function(){
+		$('.datu').css('display','block');
+	})
+	$('.container').mousemove(function(ment){
+		var me = ment || window.event;
+		var left = me.offsetX;
+		var top = me.offsetY;
+		console.log(left,top);
+		console.log($('.container').height())
+		$('.datu').scrollTop(top*2-$('.container').height()/2);
+		$('.datu').scrollLeft(left*2-$('.container').width()/2);
+	})
+	$('.container').mouseout(function(){
+		$('.datu').css('display','none');
+	})
+	// var container = document.querySelector('.container');
+	// var datu = document.querySelector('.datu');
+	// container.onmouseover = function(){		
+	// 	datu.style.display = 'block';
+	// }
+	// container.onmousemove = function(ment){
+	// 	var me = ment || window.event;
+	// 	var left = me.offsetX;
+	// 	var top = me.offsetY;
+	// 	console.log(left);
+	// 	datu.scrollTop = top*2-158;
+	// 	datu.scrollLeft = left*2-110;
+	// }
+	// container.onmouseout = function(){		
+	// 	datu.style.display = 'none';
+	// }
+	</script>
+</body>
+</html>

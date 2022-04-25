@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+    body {
+        background-color: pink;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <% if(admin){%>
+    <h1>欢迎
+        <%= admin.username%>登录</h1>
+    <h1><a href="/regout">退出</a></h1>
+    <%}else{%>
+    <h1><a href="/reg">登录</a></h1>
+    <h1><a href="/login">注册</a></h1>
+    <%}%>
+    <h1>首页</h1>
+    <h2><a href="/users">用户首页</a></h2>
+    <table border="1px">
+        <tr>
+            <td>用户名</td>
+            <td>年龄</td>
+            <td>性别</td>
+        </tr>
+    </table>
+    <script>
+    </script>
+</body>
+
+</html>

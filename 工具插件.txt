@@ -1,0 +1,9 @@
+1.npm install supervisor -g  下载supervisor工具
+	supervisor功能：监听你启动的文件，如果发生改变，则自动重启命令，让修改生效,核心原理：watch监听文件
+	使用：supervisor 需要监听的文件
+2.npm install moment --save   下载时间格式化插件
+	使用:
+		var moment = require("moment");
+		var time = new Date();
+		var res = moment(time).format('YYYY-MM-DD HH:mm:ss')
+	

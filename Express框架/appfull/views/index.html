@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<% if (admin) { %>
+	<h3>欢迎<%= admin.username %></h3>
+	<h3><a href="/logout">退出</a></h3>
+	<% } else { %>
+	<h3><a href="/login">请登录</a></h3>
+	<h3><a href="/reg">请注册</a></h3>
+	<% } %>
+</body>
+</html>

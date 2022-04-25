@@ -1,0 +1,74 @@
+1.密码加密模块:md5加密
+	定义密码：var passworrd = "123456";
+
+	1.引入加密模块(原生模块)
+		var crypto = require("crypto");
+	2.定义加密方式
+		var md5 = crypto.createHash("md5");
+		md5.update(passsword);
+	3.生成加密密码
+		var newpassword = md5.digest("hex");
+
+
+
+
+2.文件上传模块
+	首先下载模块
+		npm install multer --save\
+
+	1.模板页的表单需要给文件域的表单添加enctype="multipart/form-data";
+		<form action="" method="post" enctype="multipart/form-data"></form>
+
+	2.路由中的代码
+		var multer = require("multer");    ////引入multer模块
+		var upload = multer({				
+			dest:"public/upload"		  ///设置上传目录为/public/upload
+		})
+	
+	3.接收文件路由upload.single(前端传来的数据)
+	router.post('/upload', upload.single('img'), function(req, res) {
+    	// 接收文件数据
+    	console.log(req.file);
+	})
+
+
+
+3.登录注册session模块
+	1.下载
+			npm install express-session --save
+			npm install connect-mongo --save
+	2.修改app.js，添加下面代码
+		 ////增加session中间件支持：使用session，而且用mongodb数据库保存当前登陆者相关信息
+			var session = require('express-session');
+			var MongoStore = require('connect-mongo');
+			
+			app.use(session({
+				name:"SESSIONID",	// 设置cookie中保存session_id的字段名称（自定义）
+				secret: 'pipixiawomenzou',	// 服务器端生成session的签名（自定义）
+				store: new MongoStore({ url:"mongodb://localhost:27017/test" }), // 存储到mongodb数据库中
+				resave: true, // 当客户端并行发送多个请求时，其中一个请求在另一个请求结束时对session进行修改覆盖并保存。
+				saveUninitialized: true	 // 初始化session时是否保存到存储
+				cookie: { maxAge: 1000 * 60 * 60 * 24 * 30, secure: false }, //设置有效期
+			}));
+
+	使用：
+		设置session值(admin为自定义的，后面的对象数据可以改成变量)：
+		req.session.admin = {username："zhangsan"};
+		获取session值：
+		req.session.admin
+
+
+	##消息提示(依赖session/exprss-session);
+		1.下载模块
+			npm install connect-flash --save
+		2.添加以下代码至aap.js
+			var flash = require("connect-flash");
+			app.use(flash());
+		3.后端存储信息
+			req.flash("error","用户名和密码不正确");
+
+		4.服务器获取信息
+			re.flash("error").toString()
+
+			可以通过req.render()的第二个属性传值给前端页面,前端通过ejs模板引擎获取
+			toString()也可以不用

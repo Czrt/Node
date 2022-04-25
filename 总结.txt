@@ -1,0 +1,145 @@
+node.js：将js运行在服务器端,并且作者用c+语言给它添加了一些新的功能
+	1.定义了一中新的数据类型Buffer,用来文件读取和网络传输
+		格式：Buffer.form("str"): 返回一个被 string 的值初始化的新的 Buffer 实例
+			  Buffer.alloc("number") ：返回一个指定大小Buffer\
+		方法：buf.toString():将buffer转换成字符串
+
+	2.	__dirname:当前文件的绝对路径(不包含文件名)
+		__filename:当前文件的绝对路径(包含文件名)
+		
+	3.模块：nodejs中有原生模块+自定义模块
+		自定义模块：有两种方式
+			1.module.exports={
+				username:"zhangsan",
+				....
+			}
+			2.exports.username ="zhangsan";
+			  	....
+
+		原生模块：fs,events,url,querystring,http,zlib,crypto,path
+			fileSystem:fs文件处理模块
+			var fs = require("fs");引入fs文件处理模块
+				文件处理：
+					1.读取文件
+						fs.readFile(filename,callback(err,data){})
+							fs:文件处理模块
+							filename:读取的文件路径名称
+							callback:读取成功后的回调函数err判断，data读取的内容
+					2.覆盖写入,没有则会创建
+						fs.writeFile(filname,content,callback(err){})
+							filename:要写入的文件路径名称
+							content:要写入的内容
+							callback:回调函数
+					3.追加写入文件中
+						fs.appendFile(filename,content,callback(err){})
+							同上面的区别是在源文件内容的基础上追加新的内容
+					4.删除文件
+						fs.unlink(filename,callback(err){})
+
+				文件夹处理：
+					1.创建文件夹
+						fs.mkdir(dirname,callback(err){})
+							dirname:创建的文件夹名称
+					2.读取文件夹
+						fs.readdir(dirname,callback(err,files){})
+							files:读取的文件列表
+					3.删除文件夹
+						fs.rmdir(dirname,callback(err){})
+
+				文件和文件夹共有的操作：
+				
+					1.修改名字
+						fs.rename(原名字，新名字，callback(err){})
+
+					2.获取状态详情
+
+						fs.stat(name,callback(err,data){})
+							name:文件或文件夹的路径名称
+							data:获取的文件或文件夹的信息
+							方法：
+
+								data.isFile():判断是否是文件
+								data.isDirectory():判断是否是文件夹
+
+					3.判断是否存在
+
+						fs.exists(name,callback(bool){})
+							存在：true
+							不存在：false
+
+					4.监听文件和文件夹的变化
+
+						fs.watch(name,callback(eventname,filename){})
+							eventname:事件名称
+							filename:改变的名称
+
+				读取文件的指定内容:先打开然后读取内容最后关闭
+
+					open-read-close
+						fs.open(filename,"r+".callback(err,fd){});
+							fd:file description 文件描述符(代表打开的每一个文件);
+						var buf = Buffer.alloc(number):定义一个Buffer容器来接受内容
+						fs.read(fd,buf,offet,length,position,callback(err,num.buff){})
+							fd:文件描述符
+							buf:接收内容的容器
+							offset:buffer数据偏移值
+							length:读取内容的长度
+							position:要读取目标文件内容的起始位置
+							callback(err,num,buff):err:返回是否成功
+												   num:读取内容的字符个数
+												   buff:读取的内容
+						fs.close(fd,callback(err){})
+
+				写入文件指定内容：跟读取差不多只需要吧read改成write即可上述所有的处理方式都是     异步处理(async),然后在它们的后面加上sync就是对应的同步版本
+
+				流操作：stream
+
+					fs.createReadStream(filename):创建可读流
+					fs.createWriteStream(filename):创建可写流
+					pipe():管道:需要通过管道进行传递
+					fs.createReadStream(filename).pipe(fs.createWriteStream(filename):创建可写流)
+
+
+			url模块：
+
+				var url = require("url");引入url模块
+					url.parse(str):将url字符串转换为url对象
+					url.format(obj):将url对象转换为url字符串
+
+			querystring:查询字符串模块
+
+				var qs = require("querystring");引入模块
+					qs.parse():将字符串转换为对象
+					qs.stringify():将对象转换为字符串
+
+			path:路径模块
+
+				path.join():拼接指定的路径
+				path.resolve():将当前的脚本路径和指定路径拼接
+				path.dirname():获取指定的路径
+				path.basename():获取指定的文件名
+				path.extname():获取指定的文件后缀名
+
+			http:http模块可用来创建服务器
+
+				var http = require("http");引入http模块
+				http.createServer(function(request,response){
+					request:请求对象
+						request.url:请求的路径
+						request.method:请求的方法
+						request.headers:请求的头信息
+					response:响应对象
+						response.writeHeade:返回的头信息(状态码，响应的字符串，设置的信息)
+						response.write()
+						response.end(str):结束响应，并且给前端回复一个str
+				}).listen(3000)
+					listen():监听的端口号
+
+			zlib:压缩模块
+
+				var fs = require("fs");
+				var zlib = require("zlib");
+				解压缩：zlib.createGunzip()
+					fs.createReadStream("2.zip").pipe(zlib.createGunzip()).pipe(fs.createWriteStream("1.txt"))
+				压缩：zlib.createGunzip()
+					fs.createReadStream("1.js").pipe(zlib.createGunzip()).pipe(fs.createWriteStream("1.zip"))

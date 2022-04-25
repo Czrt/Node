@@ -1,0 +1,14 @@
+ejs模板引擎:使用js写的第三方模块，可以解释 <%%>
+
+	在模板中使用：
+			变量名要加=
+				<%= title %>   <%= value.username%>
+
+			语句中不需要加=
+			<%content.forEach(function(value,keys){%>
+        		<tr>
+           			<td><%=value.username%></td>
+            		<td><%=value.age%> </td>
+            		<td><%=value.sex%></td>
+        		</tr>
+       		<%})%>

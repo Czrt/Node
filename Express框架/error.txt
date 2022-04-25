@@ -1,0 +1,7 @@
+1. Cannot set headers after they are sent to the client
+	原因：客户端发出一次请求，服务器给出两次及以上响应;
+	解决方案：清理多余次数响应；每次响应后立马return掉函数,return false。
+
+
+2.解决Node中的 [Object: null prototype]	
+	当出现[Object: null prototype]我们可以先对对象进行JSON字符串转化(JSON.stringify())，然后再转化成对象(JSON.parse())，这样就可以去除了（以下方法对遇到[Object: null prototype]都通用）JSON.parse(JSON.stringify(req.body))
